@@ -1,0 +1,33 @@
+name: Grav Alert
+version: 0.1.0
+description: Sends a slack message if page crashes
+icon: plug
+author:
+  name: Piotr Józefiak
+  email: pjozefiak@kyoco.de
+homepage: https://github.com/pjozefiak/grav-plugin-grav-alert
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/pjozefiak/grav-plugin-grav-alert/issues
+docs: https://github.com/pjozefiak/grav-plugin-grav-alert/blob/develop/README.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    slack_hook:
+      type: text
+      label: Slack hook
+    slack_delay:
+      type: text
+      label: Minimum delay between messages (in seconds)
